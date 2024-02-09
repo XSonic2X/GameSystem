@@ -1,7 +1,6 @@
 ﻿using System;
 
 [Serializable]
-public enum TypeAEvent
+public enum TypeAttacks
 {
-    Non,
 }

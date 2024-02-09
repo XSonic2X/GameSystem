@@ -58,8 +58,8 @@ namespace GameSystem.Game_Properties.Effect
 
         public override void Update(Game_Elements.Effect effect, Game_Objects.Entity p1, Game_Objects.Entity p2)
         {
-            if (this.p1) { point = p1.specifications.GetPoint(typeP); }
-            else { point = p2.specifications.GetPoint(typeP); }
+            if (this.p1) { point = p1[typeP]; }
+            else { point = p2[typeP]; }
             if (VEStart != null)
             {
                 VEStart = null;

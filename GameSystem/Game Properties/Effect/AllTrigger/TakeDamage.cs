@@ -4,12 +4,12 @@ using System;
 namespace GameSystem.Game_Properties.Effect.AllTrigger
 {
     [Serializable]
-    public class TakeDamage : Trigger
+    public class TakeDamage : Trigger //Разобраться
     {
         public TakeDamage() { }
         TakeDamage(Entity e) 
         {
-            e.takeDamage += triggger;
+            //e.takeDamage += triggger;
         }
         public ArrayA arrayA;
         void triggger(int dps, Entity eDefender, Entity eStriker)
@@ -24,7 +24,7 @@ namespace GameSystem.Game_Properties.Effect.AllTrigger
 
         public override void End(Entity e)
         {
-            e.takeDamage -= triggger;
+            //e.takeDamage -= triggger;
         }
     }
 }

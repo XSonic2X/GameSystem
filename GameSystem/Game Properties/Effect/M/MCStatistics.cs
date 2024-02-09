@@ -52,8 +52,8 @@ namespace GameSystem.Game_Properties.Effect
         }
         public override void Update(Game_Elements.Effect effect, Game_Objects.Entity p1, Game_Objects.Entity p2)
         {
-            if (this.p1) { cs = p1.specifications.GetCharS(typeCS); }
-            else { cs = p2.specifications.GetCharS(typeCS); }
+            if (this.p1) { cs = p1[typeCS]; }
+            else { cs = p2[typeCS]; }
             if (VEStart != null)
             {
                 VEStart = null;

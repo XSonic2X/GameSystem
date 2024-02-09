@@ -38,11 +38,13 @@
   <ItemGroup>
     <Compile Include="Battle.cs" />
     <Compile Include="Dice.cs" />
-    <Compile Include="Game Objects\Barrier.cs" />
+    <Compile Include="Game Objects\FullProtection.cs" />
     <Compile Include="Game Objects\Entity.cs" />
     <Compile Include="Game Assembler\GAssembler.cs" />
     <Compile Include="Game Elements\Effect.cs" />
+    <Compile Include="Game Objects\PartialProtection.cs" />
     <Compile Include="Game Objects\Player.cs" />
+    <Compile Include="Game Objects\ProtectiveCover.cs" />
     <Compile Include="Game Properties\Effect\AllTrigger\TakeDamage.cs" />
     <Compile Include="Game Properties\Effect\Conditions.cs" />
     <Compile Include="Game Properties\Effect\GAction.cs" />
@@ -60,7 +62,7 @@
     <Compile Include="Game Properties\Effect\M\Subtraction.cs" />
     <Compile Include="Game Properties\Effect\M\Summation.cs" />
     <Compile Include="Game Properties\Effect\Trigger.cs" />
-    <Compile Include="Game Properties\EnumType\TypeAEvent.cs" />
+    <Compile Include="Game Properties\EnumType\TypeAttacks.cs" />
     <Compile Include="Game Properties\EnumType\TypeCharacteristic.cs" />
     <Compile Include="Game Properties\EnumType\TypeCharacteristicStatistics.cs" />
     <Compile Include="Game Properties\EnumType\TypeDice.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Game Properties\Info.cs" />
     <Compile Include="Game Objects\GObjects.cs" />
     <Compile Include="Game Properties\EnumType\TypeObjects.cs" />
+    <Compile Include="Game Properties\Player\Aura.cs" />
     <Compile Include="Game Properties\Player\Characteristic.cs" />
     <Compile Include="Game Properties\Player\CharacteristicStatistics.cs" />
     <Compile Include="Game Properties\Player\Point.cs" />
