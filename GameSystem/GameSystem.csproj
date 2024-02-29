@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0589499D-3671-4097-99ED-00407820FD71}</ProjectGuid>
+    <ProjectGuid>{09CD2A72-C58A-436E-926C-28C489240264}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GameSystem</RootNamespace>
@@ -33,56 +33,41 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllType\TypaConditionEntity.cs" />
+    <Compile Include="AllType\TypeDice.cs" />
+    <Compile Include="AllType\TypeSkill.cs" />
     <Compile Include="Battle.cs" />
     <Compile Include="Dice.cs" />
-    <Compile Include="Game Objects\FullProtection.cs" />
-    <Compile Include="Game Objects\Entity.cs" />
-    <Compile Include="Game Assembler\GAssembler.cs" />
-    <Compile Include="Game Elements\Effect.cs" />
-    <Compile Include="Game Objects\PartialProtection.cs" />
-    <Compile Include="Game Objects\Player.cs" />
-    <Compile Include="Game Objects\ProtectiveCover.cs" />
-    <Compile Include="Game Properties\Effect\AllTrigger\TakeDamage.cs" />
-    <Compile Include="Game Properties\Effect\Conditions.cs" />
-    <Compile Include="Game Properties\Effect\GAction.cs" />
-    <Compile Include="Game Properties\Effect\Modification.cs" />
-    <Compile Include="Game Properties\Effect\M\ArrayA.cs" />
-    <Compile Include="Game Properties\Effect\M\Division.cs" />
-    <Compile Include="Game Properties\Effect\M\Mathematics.cs" />
-    <Compile Include="Game Properties\Effect\M\MCharacteristic.cs" />
-    <Compile Include="Game Properties\Effect\M\MCStatistics.cs" />
-    <Compile Include="Game Properties\Effect\M\Meaning.cs" />
-    <Compile Include="Game Properties\Effect\M\MEffectLv.cs" />
-    <Compile Include="Game Properties\Effect\M\MPoint.cs" />
-    <Compile Include="Game Properties\Effect\M\Multiplication.cs" />
-    <Compile Include="Game Properties\Effect\M\Number.cs" />
-    <Compile Include="Game Properties\Effect\M\Subtraction.cs" />
-    <Compile Include="Game Properties\Effect\M\Summation.cs" />
-    <Compile Include="Game Properties\Effect\Trigger.cs" />
-    <Compile Include="Game Properties\EnumType\TypeAttacks.cs" />
-    <Compile Include="Game Properties\EnumType\TypeCharacteristic.cs" />
-    <Compile Include="Game Properties\EnumType\TypeCharacteristicStatistics.cs" />
-    <Compile Include="Game Properties\EnumType\TypeDice.cs" />
-    <Compile Include="Game Properties\EnumType\TypePoints.cs" />
-    <Compile Include="Game Properties\EnumType\TypeSkills.cs" />
+    <Compile Include="Game effect\Change.cs" />
+    <Compile Include="Game effect\Edite element\DEF.cs" />
+    <Compile Include="Game effect\Edite element\DPS.cs" />
+    <Compile Include="Game effect\Edite element\ESkill.cs" />
+    <Compile Include="Game effect\Edite element\HPRegen.cs" />
+    <Compile Include="Game effect\Edite.cs" />
+    <Compile Include="Game effect\Effect.cs" />
+    <Compile Include="Game entity\Hero element\Abilitie.cs" />
+    <Compile Include="Game entity\Hero element\Hero.cs" />
+    <Compile Include="Game entity\Entity.cs" />
+    <Compile Include="Game entity\Hero element\Point.cs" />
+    <Compile Include="Game entity\Hero element\Skill.cs" />
+    <Compile Include="Game entity\Hero element\Speed.cs" />
+    <Compile Include="Game entity\Hero element\Characteristic.cs" />
+    <Compile Include="Game item\Armor.cs" />
+    <Compile Include="Game item\Artifact.cs" />
+    <Compile Include="Game item\Item.cs" />
+    <Compile Include="Game item\Trash.cs" />
+    <Compile Include="Game item\Weapon.cs" />
     <Compile Include="Game Properties\Info.cs" />
-    <Compile Include="Game Objects\GObjects.cs" />
-    <Compile Include="Game Properties\EnumType\TypeObjects.cs" />
-    <Compile Include="Game Properties\Player\Aura.cs" />
-    <Compile Include="Game Properties\Player\Characteristic.cs" />
-    <Compile Include="Game Properties\Player\CharacteristicStatistics.cs" />
-    <Compile Include="Game Properties\Player\Point.cs" />
-    <Compile Include="Game Properties\Player\Skills.cs" />
-    <Compile Include="Game Properties\Player\Specifications.cs" />
-    <Compile Include="Game Properties\Player\Statistics.cs" />
     <Compile Include="GameString.cs" />
+    <Compile Include="GameSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Game Elements\EffectType\" />
+    <Compile Include="Save.cs" />
+    <Compile Include="SystemDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

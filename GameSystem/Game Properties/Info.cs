@@ -2,10 +2,10 @@
 
 namespace GameSystem.Game_Properties
 {
-    /// <summary>
-    /// Имя и описание об объекте или элементе
-    /// </summary>
     [Serializable]
+    /// <summary>
+    /// Имя и описание
+    /// </summary>
     public class Info
     {
         public Info()
