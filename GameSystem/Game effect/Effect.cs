@@ -1,45 +1,51 @@
-﻿using GameSystem.Game_entity.Hero_element;
-using GameSystem.Game_Properties;
-using System;
-using System.Collections.Generic;
+﻿using GameSystem.Game_effect.Game_mod.Game_states;
+using GameSystem.Game_element;
+using GameSystem.Game_hero;
 
 namespace GameSystem.Game_effect
 {
-    [Serializable]
-    public class Effect
+    public abstract class Effect
     {
-        public Effect() 
+        protected Effect(List<States> _states, Info _info)
         {
-            time = -1;
-            edites = new List<Edite> ();
-            changes = new List<Change>();
+            enabled = false;
+            info = _info;
+            states = _states;
         }
-        
+
         public Info info;
-        public List<Edite> edites;
-        public List<Change> changes;
-        //==================================
-        public int time;
-        //==================================
-        public void Add(Hero hero)
+        public List<States> states;
+        public bool enabled;
+
+        /// <summary>
+        /// Устаналиваевает все модификации
+        /// </summary>
+        /// <param name="hero"></param>
+        public void Apply(Hero hero)
         {
-            if (edites.Count == 0) { return; }
-            Change change = new Change(hero, this);
-            changes.Add(change);
-            change.ECEnd += Remove;
+            if (enabled) { return; }
+            enabled = true;
+            for (int i = 0; i < states.Count; i++)
+            { states[i].Apply(hero); }
+            ApplyEffect(hero);
         }
-        public void Remove(Hero hero)
+        /// <summary>
+        /// Удаляет все модификации
+        /// </summary>
+        /// <param name="hero"></param>
+        public void Reset(Hero hero)
         {
-            if (edites.Count == 0) { return; }
-            for (int i = changes.Count - 1; i >= 0;i-- )
+            if (enabled) 
             {
-                changes[i].End(changes[i].hero);
+                enabled = false;
+                for (int i = 0; i < states.Count; i++)
+                { states[i].Reset(hero); }
+                ResetEffect(hero); 
             }
         }
-        void Remove(Change change)
-        {
-            changes.Remove(change);
-            change.ECEnd -= Remove;
-        }
+        protected abstract void ApplyEffect(Hero hero);
+        protected abstract void ResetEffect(Hero hero);
+
+        public override string ToString() => info == null ? "Null_Name" : info.ToString();
     }
 }
